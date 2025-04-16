@@ -62,7 +62,13 @@ function expenseAdd(newExpense) {
 
       expenseInfo.append(expenseName,expenseCategory)
 
-      expenseItem.append(expenseIcon, expenseInfo)
+      const expenseAmount = document.createElement("span")
+      expenseAmount.classList.add("expense-amount")
+      expenseAmount.innerHTML = `<small>R$</small>${newExpense.amount
+        .toUpperCase()
+        .replace("R$", "")}`
+
+      expenseItem.append(expenseIcon, expenseInfo, expenseAmount)
       expenseList.append(expenseItem)
 
    } catch (error) {
