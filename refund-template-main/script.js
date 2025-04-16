@@ -80,6 +80,8 @@ function expenseAdd(newExpense) {
       
       expenseList.append(expenseItem)
 
+      formClear()
+
      updateTotals()
    } catch (error) {
      alert("Não foi possível atualizar a lista de despesas.")
@@ -139,3 +141,11 @@ item.remove()
 
 updateTotals()
 })
+
+function formClear () {
+  expense.value = ""
+  category.value = ""
+  amount.value = ""
+
+  expense.focus()
+}
